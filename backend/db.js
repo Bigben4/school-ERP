@@ -21,3 +21,7 @@ const connectToDatabase = async () => {
         }
 
 };
+
+module.exports ={
+    sql, connectToDatabase
+};
