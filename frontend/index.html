@@ -3,9 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+    <title>User</title>
 </head>
 <body>
+
+    <form action="" class="registerform" id="registerform">
+        <h1>Sign UP</h1>
+        <div class="Name-input">
+            <input type="text" placeholder="First Name" required>
+            <input type="text" placeholder="Last Name" required>
+        </div>
+        <div class="Matricule">
+            <input type="email" placeholder="Enter Email">
+            <input type="number" placeholder="Enter Matricule Number">
+        </div>
+        <div class="Password">
+            <input type="password" placeholder="Enter Password" required>
+            <input type="password" placeholder="Renter Password" required>
+        </div>
+        <div class="checkbox">
+            <input type="checkbox">
+            <p>Remember me</p>
+        </div>
+        <div class="signup-btn">
+            <Button>sign Up</Button>
+        </div>
+         <div class="HaveAccount">
+             <a href="#loginform" id="login-btn">Login</a>
+        </div>
+    </form>
+
+    <form action="" class="Login registerform" id="loginform" style="display: none;">
+
+        <h1>Login</h1>
+        <div class="Name-input">
+            <input type="text" placeholder="First Name" required>
+            <input type="text" placeholder="Last Name" required>
+        </div>
+        <div class="Matricule">
+            <input type="email" placeholder="Enter Email">
+            <input type="number" placeholder="Enter Matricule Number">
+        </div>
+        <div class="Password">
+            <input type="password" placeholder="Enter Password" required>
+        </div>
+        <div class="checkbox">
+            <input type="checkbox">
+            <p>Remember me</p>
+        </div>
+        <div class="signup-btn">
+            <Button>Login</Button>
+        </div>
+        <div class="HaveAccount">
+             <a href="#registerform" id="register-btn">Register</a>
+        </div>
+    </form>
     
+    <script src="index.js"></script>
 </body>
 </html> 

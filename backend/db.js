@@ -3,11 +3,9 @@
 const sql = require('mssql');
 
 const config =  {
-    user: 'sa',
-    password: 'password',
-    server:'localhost',
+    server:'(localdb)\\MSSQLLocalDB',
     database:'schoolerp',
-    Option: {
+    options: {
         trustServerCertificate: true
     }
 };

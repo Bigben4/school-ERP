@@ -1,0 +1,120 @@
+
+
+
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+:root{
+    --accent--:#6b0f1a;
+    --active-: #3b081f; /*for headings text, main text, important labels */
+    --bg-color:#dce0d9;
+    --placeholder-:#898989; /*for text discriptions, helper text, small infor*/
+    --border-:  #8d8f88; /* disabled buttons, input placeholders, inactive label*/
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;    
+}
+
+/* Signup form  */
+.registerform{
+    height:550px;
+    width:250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:10px;
+    flex-direction: column;
+    border: 1px solid var(--border-);
+    background-color: var(--bg-color);
+}
+.registerform input{
+   background-color:var(--bg-form-);
+   border: var(--border-);
+}
+.registerform input:active{
+   border: var(--active-);
+}
+.registerform input:hover{
+   border:var(--active-);
+}
+
+form input::placeholder{
+    color: var(--placeholder-);
+}
+form h1{
+    margin-top:10px;
+    color: var(--active-);
+}
+.Name-input{
+    width: 100%;
+    display: flex;
+    padding:10px;
+    flex-direction: column;
+}
+.Name-input input{
+    margin: 5px;
+    padding:10px;
+    border-radius:10px;   
+}
+.Matricule{
+     width: 100%;
+    display: flex;
+    padding:10px;
+    flex-direction: column;
+}
+.Matricule input{
+     margin: 5px;
+    padding:10px;
+    border-radius:10px;
+}
+.Password{
+     width: 100%;
+    display: flex;
+    padding:10px;
+    flex-direction: column;
+}
+.Password input{
+    margin: 5px;
+    padding:10px;
+    border-radius:10px;
+}
+.checkbox{
+    width:100%;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    padding:15px;
+}
+.checkbox p{
+    color:var(--placeholder-);
+}
+
+.signup-btn{
+    width:100%;
+    padding:10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.signup-btn button{
+    width:100%;
+    padding:10px;
+    border-radius:10px; 
+    color: var(--accent--);
+    background-color: var(--bg-color);
+}
+
+.HaveAccount{
+    width:100%;
+    display: flex;
+    padding:10px;
+    align-items: center;
+    justify-content: end;
+}
