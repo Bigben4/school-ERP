@@ -13,6 +13,7 @@
     --bg-color:#dce0d9;
     --placeholder-:#898989; /*for text discriptions, helper text, small infor*/
     --border-:  #8d8f88; /* disabled buttons, input placeholders, inactive label*/
+    --errors-:red;
 }
 body{
     width: 100vw;
@@ -117,4 +118,10 @@ form h1{
     padding:10px;
     align-items: center;
     justify-content: end;
+}
+
+#error{
+    display:flex;
+    align-self: center;
+    color:var(--errors-);
 }

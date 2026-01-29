@@ -5,7 +5,8 @@ create table User_table (
      User_id int Not null PRIMARY KEY,
      Name varchar(255),
      Email varchar(255),
-     Password varchar(255),
+     Renter_Password varchar(10),
+     Password varchar(10),
      Role varchar(255),
      Created_at varchar(255)
 );
@@ -59,6 +60,7 @@ create table Payment_table (
 
 create table Annoucement_table(
       Annoucement_id int not null primary key,
+      Student_id int foreign key references Student_table(Student_id),
       Title varchar(255),
       Message varchar(max)
 );

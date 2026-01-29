@@ -12,21 +12,22 @@
     <form action="" class="registerform" id="registerform">
         <h1>Sign UP</h1>
         <div class="Name-input">
-            <input type="text" placeholder="First Name" required>
-            <input type="text" placeholder="Last Name" required>
+            <input type="text" id="reg-Firstname" placeholder="First Name" required>
+            <input type="text" id="reg-Lastrname" placeholder="Last Name" required>
         </div>
         <div class="Matricule">
-            <input type="email" placeholder="Enter Email">
-            <input type="number" placeholder="Enter Matricule Number">
+            <input id="Email" type="email" placeholder="Enter Email">
+            <input id="Matricule" type="number" placeholder="Enter Matricule Number">
         </div>
         <div class="Password">
-            <input type="password" placeholder="Enter Password" required>
-            <input type="password" placeholder="Renter Password" required>
+            <input id="reg-password" type="password" placeholder="Enter Password" required>
+            <input id="reg-re-password" type="password" placeholder="Renter Password" required>
         </div>
         <div class="checkbox">
             <input type="checkbox">
             <p>Remember me</p>
         </div>
+        <span id="error"></span>
         <div class="signup-btn">
             <Button>sign Up</Button>
         </div>
