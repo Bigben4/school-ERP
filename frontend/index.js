@@ -1,8 +1,16 @@
-const bcrypt = require('bcryptjs');
+
 const register = document.getElementById('registerform');
-const loginform = document.getElementById('loginform');
-const register_btn = document.getElementById('register-btn')
-const login_btn = document.getElementById('login-btn');
+
+const Firstname = document.getElementById('reg-Firstname');
+const Lastname = document.getElementById('reg-Lastrname');
+const matricule = document.getElementById('Matricule');
+const email = document.getElementById('Email');
+const password = document.getElementById('reg-password');
+const repassword = document.getElementById('reg-re-password');
+const register_btn = document.getElementById("register-btn");
+const loginform = document.getElementById("loginform");
+const login_btn = document.getElementById("login-btn");
+const error = document.getElementById('Error');
 
 // Toggle between login and register forms
 register_btn.addEventListener('click', () => {
@@ -18,55 +26,91 @@ login_btn.addEventListener('click', () => {
 
 
 // Handle registration form submission
-register.addEventListener('submit', async (e) => {
+register.addEventListener('submit', (e) => {
     e.preventDefault();
-    const Firstname = document.getElementById('reg-Firstname').value;
-    const Lastname = document.getElementById('reg-Lastrname').value;
-    const matricule = document.getElementById('Matricule').value;
-    const email = document.getElementById('Email').value;
-    const password = document.getElementById('reg-password').value;
-    const repassword = document.getElementById('reg-re-password').value;
-    const error_message = document.getElementById('error');
-     
-    //check if first name and last name are not empty
-    if(!Firstname.trim() || !Lastname.trim() || !matricule.trim() || !email.trim()){
-        error_message.textContent = "Please fill in all fields";
-        return false;
-    }else{
-        error_message.textContent ='';
-    };
-    
-    
-    if(password !== repassword){
-         error_message.textContent = "Passwords do not match";
-         password.style.borderColor = "red";
-            return false;
-    }else{
-        error_message.style.display ='none';
-        password.style.borderColor = "";
-    };
-
-    //checking if password and renterpassword match before submit
-    if(repassword.value !== password.value){
-         error_message.textContent = "Passwords do not match";
-         repassword.style.borderColor = "red";
-            return false;
-    }else{
-        error_message.style.display ='none';
-        repassword.style.borderColor = "";
-    };
-
-     alert("Registration Successful");
-     return true;
-
-     
-    // Send registration data to the server
-    fetch('/api/register', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ Firstname, Lastname,rePassword, password: hashedPassword })
-    })
-    .then(response => response.json())
+    validateinput();
 });
+
+// handle error display 
+const setError = (element, message) => {
+    const inputControl = element.parentElement;
+    error.innerText = message;
+    inputControl.classList.add("errors");
+    inputControl.classList.remove("Success");
+};
+
+// success display
+const setSuccess = (element) => {
+    const inputControl = element.parentElement;
+    error.innerText = "";
+    inputControl.classList.add("Success");
+    inputControl.classList.remove("errors");
+};
+
+
+// email validation
+const isvalidemail = email => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email.toLowerCase());
+};
+
+// main validation
+const validateinput = () => {
+    const fname = Firstname.value.trim();
+    const lname = Lastname.value.trim();
+    const mail = email.value.trim();
+    const pass = password.value.trim();
+    const repass = repassword.value.trim();
+
+    if (fname === "") {
+        setError(Firstname, "First name is required");
+    } else {
+        setSuccess(Firstname);
+    }
+
+    if (lname === "") {
+        setError(Lastname, "Last name is required");
+    } else {
+        setSuccess(Lastname);
+    }
+
+    if (mail === "") {
+        setError(email, "Email is required");
+    } else if (!isvalidemail(mail)) {
+        setError(email, "Invalid email format");
+    } else {
+        setSuccess(email);
+    }
+
+    if (pass.length < 8) {
+        setError(password, "Password must be at least 8 characters");
+    } else {
+        setSuccess(password);
+    }
+
+    if (repass !== pass) {
+        setError(repassword, "Passwords do not match");
+    } else {
+        setSuccess(repassword);
+    }
+};
+
+
+
+//     // Send registration data to the server
+//      fetch('/api/register', {
+//         method: 'POST',
+//         headers: { 'Content-Type': 'application/json' },
+//         body: JSON.stringify({
+//             Firstname,
+//             Lastname,
+//             matricule,
+//             email,
+//             password
+//         })
+//     })
+//     .then(res => res.json())
+//     .then(data => console.log(data))
+//     .catch(err => console.error(err));
+
+// });

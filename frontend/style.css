@@ -14,6 +14,7 @@
     --placeholder-:#898989; /*for text discriptions, helper text, small infor*/
     --border-:  #8d8f88; /* disabled buttons, input placeholders, inactive label*/
     --errors-:red;
+    --valid--:green;
 }
 body{
     width: 100vw;
@@ -35,6 +36,8 @@ body{
     border: 1px solid var(--border-);
     background-color: var(--bg-color);
 }
+
+
 .registerform input{
    background-color:var(--bg-form-);
    border: var(--border-);
@@ -44,6 +47,24 @@ body{
 }
 .registerform input:hover{
    border:var(--active-);
+}
+
+.input:focus{
+    outline:0;
+}
+
+.input-control .input .Success input{
+    border-color:var(--valid--);
+}
+
+.input-control .input .errors input{
+    border-color:var(--errors-);
+}
+
+.input-control .error{
+    color:var(--errors-);
+    font-size:9px;
+    height:auto;
 }
 
 form input::placeholder{

@@ -9,34 +9,36 @@
 </head>
 <body>
 
-    <form action="" class="registerform" id="registerform">
+    <form  class="registerform" id="registerform"  >
         <h1>Sign UP</h1>
-        <div class="Name-input">
-            <input type="text" id="reg-Firstname" placeholder="First Name" required>
-            <input type="text" id="reg-Lastrname" placeholder="Last Name" required>
+        <div class="Name-input input-control">
+            <input type="text" id="reg-Firstname" placeholder="First Name" >
+            <input type="text" id="reg-Lastrname" placeholder="Last Name" >
+            <div id="Error"></div>
         </div>
-        <div class="Matricule">
+        <div class="Matricule input-control">
             <input id="Email" type="email" placeholder="Enter Email">
             <input id="Matricule" type="number" placeholder="Enter Matricule Number">
+            <div id="Error"></div>
         </div>
-        <div class="Password">
-            <input id="reg-password" type="password" placeholder="Enter Password" required>
-            <input id="reg-re-password" type="password" placeholder="Renter Password" required>
+        <div class="Password input-control">
+            <input id="reg-password" type="password" placeholder="Enter Password" >
+            <input id="reg-re-password" type="password" placeholder="Renter Password" >
+            <div id="Error"></div>
         </div>
-        <div class="checkbox">
+        <div class="checkbox input-control">
             <input type="checkbox">
             <p>Remember me</p>
         </div>
-        <span id="error"></span>
         <div class="signup-btn">
-            <Button>sign Up</Button>
+            <Button id="registration_btn" type="submit">sign Up</Button>
         </div>
          <div class="HaveAccount">
              <a href="#loginform" id="login-btn">Login</a>
         </div>
     </form>
 
-    <form action="" class="Login registerform" id="loginform" style="display: none;">
+    <form action="/" class="Login registerform" id="loginform" style="display: none;">
 
         <h1>Login</h1>
         <div class="Name-input">
@@ -62,6 +64,5 @@
         </div>
     </form>
     
-    <script src="index.js"></script>
 </body>
 </html> 

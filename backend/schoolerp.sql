@@ -3,7 +3,8 @@ go
 
 create table User_table (
      User_id int Not null PRIMARY KEY,
-     Name varchar(255),
+     first_name varchar(255),
+     last_name varchar(255),
      Email varchar(255),
      Renter_Password varchar(10),
      Password varchar(10),
