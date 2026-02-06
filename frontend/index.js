@@ -10,6 +10,11 @@ const register_btn = document.getElementById("register-btn");
 const loginform = document.getElementById("loginform");
 const login_btn = document.getElementById("login-btn");
 const error = document.getElementById('Error');
+const errorLast = document.getElementById('Error-last');
+const errorEmail = document.getElementById("Error-emai");
+const matriculation = document.getElementById("Error-matricule");
+const passError = document.getElementById("Error-password");
+const repassError = document.getElementById("Error-re-password");
 
 // Toggle between login and register forms
 register_btn.addEventListener('click', () => {
@@ -30,22 +35,10 @@ register.addEventListener('submit', (e) => {
     validateinput();
 });
 
-// handle error display 
-const setError = (element, message) => {
-    const inputControl = element.parentElement;
-    error.innerText = message;
-    inputControl.classList.add("errors");
-    inputControl.classList.remove("Success");
-};
-
-// success display
-const setSuccess = (element) => {
-    const inputControl = element.parentElement;
-    error.innerText = "";
-    inputControl.classList.add("Success");
-    inputControl.classList.remove("errors");
-};
-
+loginform.addEventListener('submit', (e) => {
+    e.preventDefault();
+    validate();
+});
 
 // email validation
 const isvalidemail = email => {
@@ -53,44 +46,67 @@ const isvalidemail = email => {
     return re.test(email.toLowerCase());
 };
 
+
+
+
+
+
 // main validation
 const validateinput = () => {
     const fname = Firstname.value.trim();
     const lname = Lastname.value.trim();
+    const matric = matricule.value.trim();
     const mail = email.value.trim();
     const pass = password.value.trim();
     const repass = repassword.value.trim();
+   
 
     if (fname === "") {
-        setError(Firstname, "First name is required");
+        error.innerText = "First name is required";
+        Firstname.classList.add('error')
     } else {
-        setSuccess(Firstname);
+        error.innerText = "";
+        Firstname.classList.add('valid');
     }
 
     if (lname === "") {
-        setError(Lastname, "Last name is required");
+          errorLast.innerHTML ="Last name is required";
+          Lastname.classList.add('error')
     } else {
-        setSuccess(Lastname);
+        errorLast.innerText = "";
+        Lastname.classList.add('valid');
+    }
+    
+
+    if(matric === ""){
+          matriculation.innerHTML = "Matricule is required";
+          matricule.classList.add('error');
+    }else{
+          matriculation.innerHTML = "";
+          matricule.classList.add('valid');  
+    };
+    
+     if(pass === "" ){
+         passError.innerHTML = "Password is required";
+          password.classList.add('error')
+     }else if (pass.length < 8) {
+        passError.innerHTML = "Password must be at least 8 characters";
+        password.classList.add('error');
+    } else {
+        passError.innerHTML = "";
+         password.classList.add('valid');
     }
 
-    if (mail === "") {
-        setError(email, "Email is required");
-    } else if (!isvalidemail(mail)) {
-        setError(email, "Invalid email format");
-    } else {
-        setSuccess(email);
-    }
+    if(repass === "" ){
+            repassError.innerHTML = "Please confirm your password";
+            repassword.classList.add('error')
+    } else if (pass !== repass) {
+      repassError.innerHTML =  "Passwords do not match";
+      repassword.classList.add('error')
 
-    if (pass.length < 8) {
-        setError(password, "Password must be at least 8 characters");
     } else {
-        setSuccess(password);
-    }
-
-    if (repass !== pass) {
-        setError(repassword, "Passwords do not match");
-    } else {
-        setSuccess(repassword);
+        repassError.innerHTML =  "";
+         repassword.classList.add('valid');
     }
 
 

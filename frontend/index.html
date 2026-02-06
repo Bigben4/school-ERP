@@ -11,32 +11,38 @@
 
     <form  class="registerform" id="registerform"  >
         <h1>Sign UP</h1>
+
         <div class="Name-input input-control">
             <input type="text" id="reg-Firstname" placeholder="First Name" >
             <div id="Error"></div>
         </div>
+
         <div class="last-input input-control">
             <input type="text" id="reg-Lastrname" placeholder="Last Name" >
-            <div id="Error"></div>
-        </div>
-        <div class="email input-control">
-            <input id="Email" type="email" placeholder="Enter Email">
-            <div id="Error"></div>
-        </div>
-            <div class="Matricule input-control">
-            <input id="Matricule" type="number" placeholder="Enter Matricule Number">
-            <div id="Error"></div>
-        </div>
-        <div class="Password input-control">
-            <input id="reg-password" type="password" placeholder="Enter Password" >
-            <div id="Error"></div>
-            </div>
-            <div class="re-password input-control">
-            <input id="reg-re-password" type="password" placeholder="Renter Password" >
-            <div id="Error"></div>
+            <div id="Error-last"></div>
         </div>
 
-        <div class="checkbox-container input-control">
+        <div class="email input-control">
+            <input id="Email" type="email" placeholder="Enter Email">
+            <div id="Error-email"></div>
+        </div>
+            
+        <div class="Matricule input-control">
+            <input id="Matricule" type="number" placeholder="Enter Matricule Number">
+            <div id="Error-matricule"></div>
+        </div>
+
+        <div class="Password input-control">
+            <input id="reg-password" type="password" placeholder="Enter Password" >
+             <div id="Error-password"></div>
+       </div>
+
+         <div class="re-password input-control">
+            <input id="reg-re-password" type="password" placeholder="Renter Password" >
+             <div id="Error-re-password"></div>
+        </div>
+
+        <div class="checkbox-container">
             <input type="checkbox" class="checkbox">
             <p>Remember me</p>
         </div>
@@ -51,36 +57,36 @@
 
     </form>
 
-    <form action="/" class="Loginform registerform" id="loginform" style="display:none;">
+    <form class="Loginform registerform" id="loginform" style="display:none;">
 
         <h1>Login</h1>
 
         <div class="Name-input input-control">
-            <input type="text" placeholder="First Name" required>
+            <input type="text" id="reg-Firstname" placeholder="First Name" >
             <div class="Error"></div>
         </div>
 
         <div class="last-input input-control">
-            <input type="text" placeholder="Last Name" required>
+            <input type="text" id="reg-Lastrname" placeholder="Last Name" >
             <div class="Error"></div>
         </div>
 
         <div class="Matricule input-control">
-            <input type="email" placeholder="Enter Email">
+            <input id="Email" type="email" placeholder="Enter Email">
             <div class="Error"></div>
         </div>
 
         <div class="Password input-control">
-            <input type="password" placeholder="Enter Password" required>
+            <input type="password" id="reg-password" placeholder="Enter Password" >
             <div class="Error"></div>
         </div>
 
-        <div class="checkbox-container input-control">
+        <div class="checkbox-container ">
             <input type="checkbox" class="checkbox">
             <p>Remember me</p>
         </div>
-        <div class="signup-btn">
-            <Button>Login</Button>
+        <div >
+            <Button class="signup-btn" type="submit">Login</Button>
         </div>
         <div class="have-account">
              <a href="#registerform" id="register-btn">Register</a>
