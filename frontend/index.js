@@ -1,6 +1,5 @@
 
 const register = document.getElementById('registerform');
-
 const Firstname = document.getElementById('reg-Firstname');
 const Lastname = document.getElementById('reg-Lastrname');
 const matricule = document.getElementById('Matricule');
@@ -93,24 +92,27 @@ const validateinput = () => {
     } else {
         setSuccess(repassword);
     }
+
+
+
+    //  Send registration data to the server
+    //  fetch('/api/register', {
+    //     method: 'POST',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify({
+    //         fname,
+    //         lname,
+    //         matricule,
+    //          mail,
+    //         pass,
+    //         repass,
+    //     })
+    // })
+    // .then(res => res.json())
+    // .then(data => console.log(data))
+    // .catch(err => console.error(err));
+
+
 };
 
 
-
-//     // Send registration data to the server
-//      fetch('/api/register', {
-//         method: 'POST',
-//         headers: { 'Content-Type': 'application/json' },
-//         body: JSON.stringify({
-//             Firstname,
-//             Lastname,
-//             matricule,
-//             email,
-//             password
-//         })
-//     })
-//     .then(res => res.json())
-//     .then(data => console.log(data))
-//     .catch(err => console.error(err));
-
-// });

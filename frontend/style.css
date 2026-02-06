@@ -21,128 +21,89 @@ body{
     height: 100vh;
     display:flex;
     align-items: center;
-    justify-content: center;    
+    justify-content: center;   
+    flex-direction: column; 
 }
 
-/* Signup form  */
-.registerform{
-    height:550px;
-    width:250px;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    border-radius:10px;
+form{
+    display: flex;
     flex-direction: column;
-    border: 1px solid var(--border-);
+    width: 400px;
+    padding: 20px;
     background-color: var(--bg-color);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-
-.registerform input{
-   background-color:var(--bg-form-);
-   border: var(--border-);
-}
-.registerform input:active{
-   border: var(--active-);
-}
-.registerform input:hover{
-   border:var(--active-);
-}
-
-.input:focus{
-    outline:0;
-}
-
-.input-control .input .Success input{
-    border-color:var(--valid--);
-}
-
-.input-control .input .errors input{
-    border-color:var(--errors-);
-}
-
-.input-control .error{
-    color:var(--errors-);
-    font-size:9px;
-    height:auto;
-}
-
-form input::placeholder{
-    color: var(--placeholder-);
-}
-form h1{
-    margin-top:10px;
-    color: var(--active-);
-}
-.Name-input{
+input{
     width: 100%;
-    display: flex;
-    padding:10px;
-    flex-direction: column;
-}
-.Name-input input{
-    margin: 5px;
-    padding:10px;
-    border-radius:10px;   
-}
-.Matricule{
-     width: 100%;
-    display: flex;
-    padding:10px;
-    flex-direction: column;
-}
-.Matricule input{
-     margin: 5px;
-    padding:10px;
+    padding: 10px;
+    margin: 10px 0;
     border-radius:10px;
+    border: 1px solid var(--border-);
+    border-radius: 5px;
+    font-size: 16px;
 }
-.Password{
-     width: 100%;
+input:focus{
+    outline: none;
+    border-color: var(--accent--);
+}
+h1{
+    color: var(--active-);
+    text-align: center;
+    margin-bottom: 20px;
+}
+.checkbox-container{
     display: flex;
-    padding:10px;
-    flex-direction: column;
-}
-.Password input{
-    margin: 5px;
-    padding:10px;
-    border-radius:10px;
-}
-.checkbox{
-    width:100%;
-    display: flex;
-    align-items:center;
-    justify-content: space-between;
-    padding:15px;
-}
-.checkbox p{
-    color:var(--placeholder-);
-}
-
-.signup-btn{
-    width:100%;
-    padding:10px;
-    display: flex;
+    justify-content:end;
     align-items: center;
-    justify-content: center;
 }
-.signup-btn button{
-    width:100%;
-    padding:10px;
-    border-radius:10px; 
+.checkbox-container input{
+    width: auto;
+    margin-right: 10px;
+}
+.checkbox-container p{
+    color: var(--placeholder-);
+    font-size: 14px;
+    line-height: normal;
+    white-space: nowrap;
+}
+button{
+    width: 100%;
+    padding: 10px;
+    background-color: var(--accent--);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+button:hover{
+    background-color: var(--active-);
+}
+.have-account{
+    color: var(--placeholder-);
+    text-align: center;
+    margin-top: 20px;
+}
+.have-account a{
     color: var(--accent--);
-    background-color: var(--bg-color);
+    text-decoration: none;
+}
+.have-account a:hover{
+    text-decoration: underline;
+}
+.have-account a:active{
+    color: var(--valid--);
+}
+.error{
+    color: var(--errors-);
+    font-size: 14px;
+    margin-top: -5px;
+}
+.valid{
+    color: var(--valid--);
+    font-size: 14px;
+    margin-top: -5px;
 }
 
-.HaveAccount{
-    width:100%;
-    display: flex;
-    padding:10px;
-    align-items: center;
-    justify-content: end;
-}
-
-#error{
-    display:flex;
-    align-self: center;
-    color:var(--errors-);
-}

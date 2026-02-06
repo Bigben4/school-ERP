@@ -13,53 +13,76 @@
         <h1>Sign UP</h1>
         <div class="Name-input input-control">
             <input type="text" id="reg-Firstname" placeholder="First Name" >
+            <div id="Error"></div>
+        </div>
+        <div class="last-input input-control">
             <input type="text" id="reg-Lastrname" placeholder="Last Name" >
             <div id="Error"></div>
         </div>
-        <div class="Matricule input-control">
+        <div class="email input-control">
             <input id="Email" type="email" placeholder="Enter Email">
+            <div id="Error"></div>
+        </div>
+            <div class="Matricule input-control">
             <input id="Matricule" type="number" placeholder="Enter Matricule Number">
             <div id="Error"></div>
         </div>
         <div class="Password input-control">
             <input id="reg-password" type="password" placeholder="Enter Password" >
+            <div id="Error"></div>
+            </div>
+            <div class="re-password input-control">
             <input id="reg-re-password" type="password" placeholder="Renter Password" >
             <div id="Error"></div>
         </div>
-        <div class="checkbox input-control">
-            <input type="checkbox">
+
+        <div class="checkbox-container input-control">
+            <input type="checkbox" class="checkbox">
             <p>Remember me</p>
         </div>
+
         <div class="signup-btn">
             <Button id="registration_btn" type="submit">sign Up</Button>
         </div>
-         <div class="HaveAccount">
+
+         <div class="have-account">
              <a href="#loginform" id="login-btn">Login</a>
         </div>
+
     </form>
 
-    <form action="/" class="Login registerform" id="loginform" style="display: none;">
+    <form action="/" class="Loginform registerform" id="loginform" style="display:none;">
 
         <h1>Login</h1>
-        <div class="Name-input">
+
+        <div class="Name-input input-control">
             <input type="text" placeholder="First Name" required>
+            <div class="Error"></div>
+        </div>
+
+        <div class="last-input input-control">
             <input type="text" placeholder="Last Name" required>
+            <div class="Error"></div>
         </div>
-        <div class="Matricule">
+
+        <div class="Matricule input-control">
             <input type="email" placeholder="Enter Email">
-            <input type="number" placeholder="Enter Matricule Number">
+            <div class="Error"></div>
         </div>
-        <div class="Password">
+
+        <div class="Password input-control">
             <input type="password" placeholder="Enter Password" required>
+            <div class="Error"></div>
         </div>
-        <div class="checkbox">
-            <input type="checkbox">
+
+        <div class="checkbox-container input-control">
+            <input type="checkbox" class="checkbox">
             <p>Remember me</p>
         </div>
         <div class="signup-btn">
             <Button>Login</Button>
         </div>
-        <div class="HaveAccount">
+        <div class="have-account">
              <a href="#registerform" id="register-btn">Register</a>
         </div>
     </form>
